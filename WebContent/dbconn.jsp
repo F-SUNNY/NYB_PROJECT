@@ -11,7 +11,7 @@
 	    Class.forName(driver);
 	    conn=DriverManager.getConnection(url,"scott","tiger"); //자신의 아이디와 비밀번호
 	    connect = true;
-	    conn.close();
+	    
 	}catch(Exception e){
 	    connect = false;
 	    e.printStackTrace();
