@@ -29,9 +29,9 @@
 	String fileName = multi.getFilesystemName(fname);
 	System.out.println(fileName);
 	
-	PreparedStatement pstmt = null;	
+	PreparedStatement pstmt = null;		
 	
-	String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
+	String sql = "insert into product2 values('?','?','?','?','?','?','?','?','?')";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, productid);
 	pstmt.setString(2, pname);

@@ -1,19 +1,27 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%> 
 <%
-	Connection conn = null;	
-
-	try {
-		String url = "jdbc:mysql://localhost:3306/lastDB?characterEncoding=euckr&useUnicode=true&mysqlEncoding=euckr";
-		String user = "root";
-		String password = null;
-
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection(url, user, password);
-		System.out.println("데이터베이스 연결이 성공했습니다..");
-	} catch (SQLException ex) {
-		out.println("데이터베이스 연결이 실패되었습니다.<br>");
-		out.println("SQLException: " + ex.getMessage());
-	}
+	Connection conn=null;
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@localhost:1521:XE";
 		
+	Boolean connect = false;
+		
+	try{
+	    Class.forName(driver);
+	    conn=DriverManager.getConnection(url,"scott","tiger"); //자신의 아이디와 비밀번호
+	    connect = true;
+	    conn.close();
+	}catch(Exception e){
+	    connect = false;
+	    e.printStackTrace();
+	}
 %>
+<%
+	if(connect==true){
+    System.out.println("데이터 베이스 연결성공");
+    
+    
+}else{ %>
+    System.out.println("데이터 베이스 연결실패");
+<%}%> 
