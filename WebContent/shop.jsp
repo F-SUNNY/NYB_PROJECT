@@ -83,7 +83,7 @@
 				%>
             <div class="photo">       
                 <div class="hd">
-                    <img class="gallery" src="c:/upload/<%=rs.getString("fileName")%>" alt="no">
+                    <img class="gallery" src="C:\upload\<%=rs.getString("fileName")%>" alt="no">
                 </div>
                 <h1 class="products"><a href="product.jsp?id=<%=rs.getString("productid")%>" role="button"><%=rs.getString("manufacturer")%></a></h1>
                 <h1 class="price"><a href="product.jsp?id=<%=rs.getString("productid")%>" role="button"><%=rs.getString("price").replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",")%>원</a></h1>
